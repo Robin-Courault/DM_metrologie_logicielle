@@ -1,0 +1,157 @@
+@startuml AssistaCrise
+skinparam classAttributeIconSize 0
+
+enum TypeCrise {
+  INCENDIE
+  INONDATION
+  GLISSEMENT_TERRAIN
+  ACCIDENT_INDUSTRIEL
+  TEMPETE
+  SEISME
+  AUTRE
+}
+
+enum EtatDemande {
+  OUVERTE
+  EN_COURS
+  RESOLUE
+  FERMEE
+}
+
+enum EtatAnnonce {
+  PUBLIEE
+  MODEREE
+  ARCHIVEE
+  SUPPRIMEE
+}
+
+enum TypeAutorite {
+  MAIRE
+  PRESIDENT_METROPOLE
+  PREFET
+  AUTRE
+}
+
+enum CategorieBesoin {
+  PRET_MATERIEL
+  PRET_VEHICULE
+  DON_VETEMENTS
+  DON_COUCHAGE
+  HEBERGEMENT
+  NETTOYAGE
+  STOCKAGE
+  ACCUEIL_ANIMAUX
+  AUTRE
+}
+
+class Utilisateur {
+  - id : Long
+  - login : String
+  - nom : String
+  - prenom : String
+  - email : String
+  - telephone : String
+  - motDePasse : String
+  - dateInscription : Instant
+  - actif : Boolean
+  - banni : Boolean
+}
+
+class Sinistre
+class Citoyen
+class Agent {
+  - fonction : String
+  - service : String
+}
+class Administrateur
+class Autorite {
+  - id : Long
+  - nom : String
+  - type : TypeAutorite
+  - territoire : String
+  - contact : String
+}
+
+class Crise {
+  - id : Long
+  - titre : String
+  - description : String
+  - type : TypeCrise
+  - dateDebut : Instant
+  - dateFin : Instant
+  - zoneGeographique : String
+  - cloturee : Boolean
+}
+
+abstract class Annonce {
+  - id : Long
+  - titre : String
+  - description : String
+  - categorie : CategorieBesoin
+  - latitude : Double
+  - longitude : Double
+  - adresse : String
+  - dateCreation : Instant
+  - dateMaJ : Instant
+  - etat : EtatAnnonce
+}
+
+class Demande {
+  - etatDemande : EtatDemande
+  - dateFermeture : Instant
+  - quantite : Integer
+}
+
+class Offre {
+  - disponibleDe : Instant
+  - disponibleJusqua : Instant
+  - quantite : Integer
+}
+
+class SalonDiscussion {
+  - id : Long
+  - dateOuverture : Instant
+  - ouvert : Boolean
+}
+
+class Message {
+  - id : Long
+  - contenu : String
+  - dateEnvoi : Instant
+}
+
+class ModerationAction {
+  - id : Long
+  - dateAction : Instant
+  - motif : String
+  - type : String
+}
+
+Utilisateur <|-- Sinistre
+Utilisateur <|-- Citoyen
+Utilisateur <|-- Agent
+Utilisateur <|-- Administrateur
+
+Agent "0..*" -- "1" Autorite : rattaché >
+Autorite "1" -- "0..*" Crise : déclare >
+
+Annonce <|-- Demande
+Annonce <|-- Offre
+
+Sinistre "1" -- "0..*" Demande : publie >
+Citoyen "1" -- "0..*" Offre : propose >
+Crise "1" -- "0..*" Demande : concerne >
+Crise "1" -- "0..*" Offre : concerne >
+
+Demande "0..*" -- "0..*" Offre : répond à >
+
+Demande "1" -- "0..1" SalonDiscussion : discute via >
+SalonDiscussion "1" -- "0..*" Message : contient >
+Utilisateur "1" -- "0..*" Message : écrit >
+SalonDiscussion "0..*" -- "0..*" Utilisateur : participants >
+
+Administrateur "1" -- "0..*" ModerationAction : effectue >
+ModerationAction "0..*" -- "0..1" Annonce : cible >
+ModerationAction "0..*" -- "0..1" Utilisateur : cible >
+
+@enduml
