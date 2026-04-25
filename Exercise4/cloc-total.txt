@@ -1,0 +1,45 @@
+> The report has been generated with all APP folder (node_modules included)
+
+github.com/AlDanial/cloc v 1.98  T=143.61 s (195.3 files/s, 28664.1 lines/s)
+---------------------------------------------------------------------------------------
+Language                             files          blank        comment           code
+---------------------------------------------------------------------------------------
+JavaScript                           13643         127397         448571        2104021
+TypeScript                            9270          42025         296556         428308
+JSON                                  1680             47              0         155307
+Markdown                              1067          52141            913         131710
+EJS                                   1496          13500          16313         109565
+CSS                                     25           3536            149          43061
+Python                                  70           6374          11434          32271
+HTML                                   105           2733             13          29281
+Java                                   276           4418           3389          18804
+SCSS                                   109           1632           1553           8556
+Maven                                    4              9             32           7486
+Vuejs Component                         66            112             19           5967
+Text                                    43            449              0           2069
+XML                                     32             96            251           1098
+YAML                                    65            102            328           1082
+Bourne Shell                            15            102            189            528
+Windows Module Definition                5             83              0            451
+CSV                                     14              0              0            356
+DOS Batch                                8             59              6            291
+Go                                       1             23              7            247
+TOML                                     6             43             65            190
+C#                                       1             55              9            186
+Bourne Again Shell                       4             33             25            127
+PHP                                      1             13             19            124
+INI                                      7             21              0             91
+Properties                               9              9             29             83
+PowerShell                               2             20              2             78
+Dockerfile                               1             27              3             50
+make                                     4             17             20             45
+Ruby                                     2              6              0             31
+C++                                      2             12             20             21
+Fish Shell                               1              5             14             21
+Nix                                      1              1              0             19
+SVG                                      4              0              0              4
+CoffeeScript                             1              1              0              0
+Gradle                                   1              0              1              0
+---------------------------------------------------------------------------------------
+SUM:                                 28041         255101         779930        3081529
+---------------------------------------------------------------------------------------
