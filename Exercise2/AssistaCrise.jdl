@@ -1,0 +1,221 @@
+// ─────────────────────────────────────────────
+// Énumérations
+// ─────────────────────────────────────────────
+
+enum TypeCrise {
+    INCENDIE,
+    INONDATION,
+    GLISSEMENT_TERRAIN,
+    ACCIDENT_INDUSTRIEL,
+    TEMPETE,
+    SEISME,
+    AUTRE
+}
+
+enum EtatDemande {
+    OUVERTE,
+    EN_COURS,
+    RESOLUE,
+    FERMEE
+}
+
+enum EtatAnnonce {
+    PUBLIEE,
+    MODEREE,
+    ARCHIVEE,
+    SUPPRIMEE
+}
+
+enum TypeAutorite {
+    MAIRE,
+    PRESIDENT_METROPOLE,
+    PREFET,
+    AUTRE
+}
+
+enum CategorieBesoin {
+    PRET_MATERIEL,
+    PRET_VEHICULE,
+    DON_VETEMENTS,
+    DON_COUCHAGE,
+    HEBERGEMENT,
+    NETTOYAGE,
+    STOCKAGE,
+    ACCUEIL_ANIMAUX,
+    AUTRE
+}
+
+enum TypeModeration {
+    AVERTISSEMENT,
+    MASQUAGE,
+    SUPPRESSION,
+    BANNISSEMENT
+}
+
+// ─────────────────────────────────────────────
+// Entités
+// ─────────────────────────────────────────────
+
+// JHipster ne prend pas en charge l'héritage donc on fait un héritage un peu barbare avec des relations OneToOne
+
+entity Utilisateur {
+    login String required
+    nom String required
+    prenom String required
+    email String required
+    telephone String
+    motDePasse String required
+    dateInscription Instant
+    actif Boolean
+    banni Boolean
+}
+
+entity Sinistre {
+}
+
+entity Citoyen {
+}
+
+entity Agent {
+    fonction String
+    service String
+}
+
+entity Administrateur {
+}
+
+entity Autorite {
+    nom String required
+    type TypeAutorite required
+    territoire String
+    contact String
+}
+
+entity Crise {
+    titre String required
+    description String
+    type TypeCrise required
+    dateDebut Instant required
+    dateFin Instant
+    zoneGeographique String
+    cloturee Boolean
+}
+
+entity Annonce {
+    titre String required
+    description String
+    categorie CategorieBesoin required
+    latitude Double
+    longitude Double
+    adresse String
+    dateCreation Instant
+    dateMaJ Instant
+    etat EtatAnnonce
+}
+
+entity Demande {
+    etatDemande EtatDemande
+    dateFermeture Instant
+    quantite Integer
+}
+
+entity Offre {
+    disponibleDe Instant
+    disponibleJusqua Instant
+    quantite Integer
+}
+
+entity SalonDiscussion {
+    dateOuverture Instant
+    ouvert Boolean
+}
+
+entity Message {
+    contenu String required
+    dateEnvoi Instant required
+}
+
+entity ModerationAction {
+    dateAction Instant required
+    motif String
+    type TypeModeration required
+}
+
+// ─────────────────────────────────────────────
+// JHipster ne prend pas en charge l'héritage 
+// donc on fait un héritage un peu barbare avec 
+// des relations OneToOne.
+// ─────────────────────────────────────────────
+
+relationship OneToOne {
+    Sinistre{utilisateur(login) required} to Utilisateur
+    Citoyen{utilisateur(login) required} to Utilisateur
+    Agent{utilisateur(login) required} to Utilisateur
+    Administrateur{utilisateur(login) required} to Utilisateur
+    Demande{annonce(titre) required} to Annonce
+    Offre{annonce(titre) required} to Annonce
+}
+
+// ─────────────────────────────────────────────
+// Relations
+// ─────────────────────────────────────────────
+
+relationship ManyToOne {
+    /** Un agent est rattaché à une autorité */
+    Agent{autorite(nom) required} to Autorite
+
+    /** Une demande est publiée par un sinistré */
+    Demande{sinistre required} to Sinistre
+
+    /** Une offre est proposée par un citoyen */
+    Offre{citoyen required} to Citoyen
+
+    /** Une demande concerne une crise */
+    Demande{crise required} to Crise
+
+    /** Une offre concerne une crise */
+    Offre{crise required} to Crise
+
+    /** Un message est écrit par un utilisateur */
+    Message{utilisateur(login) required} to Utilisateur
+
+    /** Un message appartient à un salon */
+    Message{salonDiscussion required} to SalonDiscussion
+
+    /** Une modération est effectuée par un administrateur */
+    ModerationAction{administrateur required} to Administrateur
+}
+
+relationship OneToMany {
+    /** Une autorité déclare plusieurs crises */
+    Autorite{crises} to Crise{autorite required}
+}
+
+relationship OneToOne {
+    /** Une demande discute via un salon de discussion */
+    Demande{salonDiscussion} to SalonDiscussion{demande}
+}
+
+relationship ManyToMany {
+    /** Une demande peut être couverte par plusieurs offres et vice-versa */
+    Demande{offres} to Offre{demandes}
+
+    /** Un salon de discussion a plusieurs participants */
+    SalonDiscussion{participants(login)} to Utilisateur{salons}
+}
+
+relationship ManyToOne {
+    /** Une action de modération peut cibler une annonce */
+    ModerationAction{annonce} to Annonce
+
+    /** Une action de modération peut cibler un utilisateur */
+    ModerationAction{utilisateurCible(login)} to Utilisateur
+}
+
+// ─────────────────────────────────────────────
+// Options
+// ─────────────────────────────────────────────
+
+dto * with mapstruct
+service * with serviceClass
+paginate Annonce, Demande, Offre, Message, ModerationAction, Crise with pagination
