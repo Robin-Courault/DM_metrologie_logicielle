@@ -44,6 +44,13 @@ enum CategorieBesoin {
   AUTRE
 }
 
+enum TypeModeration {
+  AVERTISSEMENT
+  MASQUAGE
+  SUPPRESSION
+  BANNISSEMENT
+}
+
 class Utilisateur {
   - id : Long
   - login : String
@@ -124,7 +131,7 @@ class ModerationAction {
   - id : Long
   - dateAction : Instant
   - motif : String
-  - type : String
+  - type : TypeModeration
 }
 
 Utilisateur <|-- Sinistre
