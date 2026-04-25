@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101714"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "dateOuverture",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "ouvert",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "SalonDiscussion",
+  "relationships": [
+    {
+      "documentation": "Un salon de discussion a plusieurs participants",
+      "otherEntityField": "login",
+      "otherEntityName": "utilisateur",
+      "otherEntityRelationshipName": "salons",
+      "relationshipName": "participants",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "salonDiscussion",
+      "relationshipName": "demande",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

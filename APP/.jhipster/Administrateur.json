@@ -1,0 +1,21 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101708"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [],
+  "name": "Administrateur",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "utilisateur",
+      "relationshipName": "utilisateur",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

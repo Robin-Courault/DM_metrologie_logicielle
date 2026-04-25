@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101715"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "contenu",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateEnvoi",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Message",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "documentation": "Un message est écrit par un utilisateur",
+      "otherEntityField": "login",
+      "otherEntityName": "utilisateur",
+      "relationshipName": "utilisateur",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Un message appartient à un salon",
+      "otherEntityName": "salonDiscussion",
+      "relationshipName": "salonDiscussion",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,27 @@
+{
+  "assistaCriseApp": {
+    "salonDiscussion": {
+      "home": {
+        "title": "Salon Discussions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Salon Discussion",
+        "createOrEditLabel": "Create or edit a Salon Discussion",
+        "notFound": "No Salon Discussions found"
+      },
+      "created": "A new Salon Discussion is created with identifier { param }",
+      "updated": "A Salon Discussion is updated with identifier { param }",
+      "deleted": "A Salon Discussion is deleted with identifier { param }",
+      "delete": {
+        "question": "Are you sure you want to delete Salon Discussion { id }?"
+      },
+      "detail": {
+        "title": "Salon Discussion"
+      },
+      "id": "ID",
+      "dateOuverture": "Date Ouverture",
+      "ouvert": "Ouvert",
+      "participants": "Participants",
+      "demande": "Demande"
+    }
+  }
+}

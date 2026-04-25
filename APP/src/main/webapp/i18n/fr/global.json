@@ -7,7 +7,20 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "utilisateur": "Utilisateur",
+        "sinistre": "Sinistre",
+        "citoyen": "Citoyen",
+        "agent": "Agent",
+        "administrateur": "Administrateur",
+        "autorite": "Autorite",
+        "crise": "Crise",
+        "annonce": "Annonce",
+        "demande": "Demande",
+        "offre": "Offre",
+        "salonDiscussion": "Salon Discussion",
+        "message": "Message",
+        "moderationAction": "Moderation Action"
       },
       "account": {
         "main": "Compte",

@@ -1,0 +1,16 @@
+{
+  "assistaCriseApp": {
+    "CategorieBesoin": {
+      "null": "",
+      "PRET_MATERIEL": "PRET_MATERIEL",
+      "PRET_VEHICULE": "PRET_VEHICULE",
+      "DON_VETEMENTS": "DON_VETEMENTS",
+      "DON_COUCHAGE": "DON_COUCHAGE",
+      "HEBERGEMENT": "HEBERGEMENT",
+      "NETTOYAGE": "NETTOYAGE",
+      "STOCKAGE": "STOCKAGE",
+      "ACCUEIL_ANIMAUX": "ACCUEIL_ANIMAUX",
+      "AUTRE": "AUTRE"
+    }
+  }
+}

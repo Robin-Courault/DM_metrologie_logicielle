@@ -1,0 +1,62 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101704"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "login",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "motDePasse",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateInscription",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "actif",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "banni",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Utilisateur",
+  "relationships": [
+    {
+      "otherEntityName": "salonDiscussion",
+      "otherEntityRelationshipName": "participants",
+      "relationshipName": "salons",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

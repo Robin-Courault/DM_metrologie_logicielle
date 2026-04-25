@@ -1,0 +1,9 @@
+export enum TypeAutorite {
+  MAIRE = 'MAIRE',
+
+  PRESIDENT_METROPOLE = 'PRESIDENT_METROPOLE',
+
+  PREFET = 'PREFET',
+
+  AUTRE = 'AUTRE',
+}

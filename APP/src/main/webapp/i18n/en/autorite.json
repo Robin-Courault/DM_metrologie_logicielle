@@ -1,0 +1,28 @@
+{
+  "assistaCriseApp": {
+    "autorite": {
+      "home": {
+        "title": "Autorites",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Autorite",
+        "createOrEditLabel": "Create or edit a Autorite",
+        "notFound": "No Autorites found"
+      },
+      "created": "A new Autorite is created with identifier { param }",
+      "updated": "A Autorite is updated with identifier { param }",
+      "deleted": "A Autorite is deleted with identifier { param }",
+      "delete": {
+        "question": "Are you sure you want to delete Autorite { id }?"
+      },
+      "detail": {
+        "title": "Autorite"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "type": "Type",
+      "territoire": "Territoire",
+      "contact": "Contact",
+      "crises": "Crises"
+    }
+  }
+}

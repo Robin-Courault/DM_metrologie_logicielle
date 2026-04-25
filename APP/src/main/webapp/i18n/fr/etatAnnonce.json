@@ -1,0 +1,11 @@
+{
+  "assistaCriseApp": {
+    "EtatAnnonce": {
+      "null": "",
+      "PUBLIEE": "PUBLIEE",
+      "MODEREE": "MODEREE",
+      "ARCHIVEE": "ARCHIVEE",
+      "SUPPRIMEE": "SUPPRIMEE"
+    }
+  }
+}

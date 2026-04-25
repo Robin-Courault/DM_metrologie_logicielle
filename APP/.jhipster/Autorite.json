@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101709"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeAutorite",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MAIRE,PRESIDENT_METROPOLE,PREFET,AUTRE"
+    },
+    {
+      "fieldName": "territoire",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contact",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Autorite",
+  "relationships": [
+    {
+      "documentation": "Une autorité déclare plusieurs crises",
+      "otherEntityName": "crise",
+      "otherEntityRelationshipName": "autorite",
+      "relationshipName": "crises",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

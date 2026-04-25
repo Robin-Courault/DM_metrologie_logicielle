@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101712"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "etatDemande",
+      "fieldType": "EtatDemande",
+      "fieldValues": "OUVERTE,EN_COURS,RESOLUE,FERMEE"
+    },
+    {
+      "fieldName": "dateFermeture",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "quantite",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Demande",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "titre",
+      "otherEntityName": "annonce",
+      "relationshipName": "annonce",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Une demande discute via un salon de discussion",
+      "otherEntityName": "salonDiscussion",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "salonDiscussion",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "documentation": "Une demande est publiée par un sinistré",
+      "otherEntityName": "sinistre",
+      "relationshipName": "sinistre",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Une demande concerne une crise",
+      "otherEntityName": "crise",
+      "relationshipName": "crise",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Une demande peut être couverte par plusieurs offres et vice-versa",
+      "otherEntityName": "offre",
+      "otherEntityRelationshipName": "demandes",
+      "relationshipName": "offres",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,14 @@
+{
+  "assistaCriseApp": {
+    "TypeCrise": {
+      "null": "",
+      "INCENDIE": "INCENDIE",
+      "INONDATION": "INONDATION",
+      "GLISSEMENT_TERRAIN": "GLISSEMENT_TERRAIN",
+      "ACCIDENT_INDUSTRIEL": "ACCIDENT_INDUSTRIEL",
+      "TEMPETE": "TEMPETE",
+      "SEISME": "SEISME",
+      "AUTRE": "AUTRE"
+    }
+  }
+}

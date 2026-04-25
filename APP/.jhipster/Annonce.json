@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101711"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "titre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "categorie",
+      "fieldType": "CategorieBesoin",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PRET_MATERIEL,PRET_VEHICULE,DON_VETEMENTS,DON_COUCHAGE,HEBERGEMENT,NETTOYAGE,STOCKAGE,ACCUEIL_ANIMAUX,AUTRE"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateCreation",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dateMaJ",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "etat",
+      "fieldType": "EtatAnnonce",
+      "fieldValues": "PUBLIEE,MODEREE,ARCHIVEE,SUPPRIMEE"
+    }
+  ],
+  "name": "Annonce",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

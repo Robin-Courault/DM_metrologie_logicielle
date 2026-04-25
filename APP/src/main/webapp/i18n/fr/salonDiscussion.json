@@ -1,0 +1,27 @@
+{
+  "assistaCriseApp": {
+    "salonDiscussion": {
+      "home": {
+        "title": "SalonDiscussions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Salon Discussion",
+        "createOrEditLabel": "Créer ou éditer un Salon Discussion",
+        "notFound": "Aucun Salon Discussion trouvé"
+      },
+      "created": "Un nouveau Salon Discussion a été créé avec l'identifiant { param }",
+      "updated": "Le Salon Discussion avec l'identifiant { param } a été mis à jour",
+      "deleted": "Le Salon Discussion avec l'identifiant { param } a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Salon Discussion { id } ?"
+      },
+      "detail": {
+        "title": "Salon Discussion"
+      },
+      "id": "ID",
+      "dateOuverture": "Date Ouverture",
+      "ouvert": "Ouvert",
+      "participants": "Participants",
+      "demande": "Demande"
+    }
+  }
+}

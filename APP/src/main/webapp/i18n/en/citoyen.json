@@ -1,0 +1,24 @@
+{
+  "assistaCriseApp": {
+    "citoyen": {
+      "home": {
+        "title": "Citoyens",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Citoyen",
+        "createOrEditLabel": "Create or edit a Citoyen",
+        "notFound": "No Citoyens found"
+      },
+      "created": "A new Citoyen is created with identifier { param }",
+      "updated": "A Citoyen is updated with identifier { param }",
+      "deleted": "A Citoyen is deleted with identifier { param }",
+      "delete": {
+        "question": "Are you sure you want to delete Citoyen { id }?"
+      },
+      "detail": {
+        "title": "Citoyen"
+      },
+      "id": "ID",
+      "utilisateur": "Utilisateur"
+    }
+  }
+}

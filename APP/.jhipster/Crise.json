@@ -1,0 +1,55 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101710"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "titre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeCrise",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "INCENDIE,INONDATION,GLISSEMENT_TERRAIN,ACCIDENT_INDUSTRIEL,TEMPETE,SEISME,AUTRE"
+    },
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "zoneGeographique",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cloturee",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Crise",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "autorite",
+      "otherEntityRelationshipName": "crises",
+      "relationshipName": "autorite",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

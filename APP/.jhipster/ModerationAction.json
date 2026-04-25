@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101716"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "dateAction",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "motif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeModeration",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "AVERTISSEMENT,MASQUAGE,SUPPRESSION,BANNISSEMENT"
+    }
+  ],
+  "name": "ModerationAction",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "documentation": "Une modération est effectuée par un administrateur",
+      "otherEntityName": "administrateur",
+      "relationshipName": "administrateur",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Une action de modération peut cibler une annonce",
+      "otherEntityName": "annonce",
+      "relationshipName": "annonce",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "documentation": "Une action de modération peut cibler un utilisateur",
+      "otherEntityField": "login",
+      "otherEntityName": "utilisateur",
+      "relationshipName": "utilisateurCible",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

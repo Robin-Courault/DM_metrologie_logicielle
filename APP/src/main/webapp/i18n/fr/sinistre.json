@@ -1,0 +1,24 @@
+{
+  "assistaCriseApp": {
+    "sinistre": {
+      "home": {
+        "title": "Sinistres",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Sinistre",
+        "createOrEditLabel": "Créer ou éditer un Sinistre",
+        "notFound": "Aucun Sinistre trouvé"
+      },
+      "created": "Un nouveau Sinistre a été créé avec l'identifiant { param }",
+      "updated": "Le Sinistre avec l'identifiant { param } a été mis à jour",
+      "deleted": "Le Sinistre avec l'identifiant { param } a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Sinistre { id } ?"
+      },
+      "detail": {
+        "title": "Sinistre"
+      },
+      "id": "ID",
+      "utilisateur": "Utilisateur"
+    }
+  }
+}

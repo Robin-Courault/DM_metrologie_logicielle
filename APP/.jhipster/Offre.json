@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20260425101713"
+  },
+  "applications": ["*"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "disponibleDe",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "disponibleJusqua",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "quantite",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Offre",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "titre",
+      "otherEntityName": "annonce",
+      "relationshipName": "annonce",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Une offre est proposée par un citoyen",
+      "otherEntityName": "citoyen",
+      "relationshipName": "citoyen",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Une offre concerne une crise",
+      "otherEntityName": "crise",
+      "relationshipName": "crise",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "offres",
+      "relationshipName": "demandes",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

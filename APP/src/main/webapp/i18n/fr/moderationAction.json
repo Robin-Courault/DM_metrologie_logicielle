@@ -1,0 +1,29 @@
+{
+  "assistaCriseApp": {
+    "moderationAction": {
+      "home": {
+        "title": "ModerationActions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Moderation Action",
+        "createOrEditLabel": "Créer ou éditer un Moderation Action",
+        "notFound": "Aucun Moderation Action trouvé"
+      },
+      "created": "Un nouveau Moderation Action a été créé avec l'identifiant { param }",
+      "updated": "Le Moderation Action avec l'identifiant { param } a été mis à jour",
+      "deleted": "Le Moderation Action avec l'identifiant { param } a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Moderation Action { id } ?"
+      },
+      "detail": {
+        "title": "Moderation Action"
+      },
+      "id": "ID",
+      "dateAction": "Date Action",
+      "motif": "Motif",
+      "type": "Type",
+      "administrateur": "Administrateur",
+      "annonce": "Annonce",
+      "utilisateurCible": "Utilisateur Cible"
+    }
+  }
+}
