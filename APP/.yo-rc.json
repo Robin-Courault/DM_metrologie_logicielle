@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "assista-crise",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "clientFramework": "vue",
+    "clientTestFrameworks": [],
+    "clientTheme": "none",
+    "creationTimestamp": 1777111363068,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": null,
+    "enableTranslation": true,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "9.0.0",
+    "jwtSecretKey": "MjkyYWU5MWI3NjJmMzVlZWRiYjU1ZmQ3MjE2ZDU5YWI5MjE5ZDg5YmUxMmU2MjMyMGQ0NjMzYWY5MTAxMjlkOGVjMGUyYjIyMWU0ZjJhMmQ2YzJjMGY4YWE3OTMwYTFlMzMwNDYyMzdkNDE1MGFmYTVhYjVkYTI5ZTUwODBhMjE=",
+    "languages": ["fr", "en"],
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "fr",
+    "packageName": "com.robin_courault.assista_crise",
+    "prodDatabaseType": "postgresql",
+    "reactive": false,
+    "serverPort": null,
+    "serviceDiscoveryType": null,
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": true
+  }
+}

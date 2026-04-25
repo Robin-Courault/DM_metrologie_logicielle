@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    com.robin_courault.assista_crise.config.SqlTestContainersSpringContextCustomizerFactory
